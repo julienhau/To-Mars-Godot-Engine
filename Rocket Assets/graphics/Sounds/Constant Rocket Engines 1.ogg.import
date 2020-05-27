@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Constant Rocket Engines 1.ogg-c45178f1f0abe5ad1088996aa19af228.oggstr"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Constant Rocket Engines 1.ogg"
+dest_files=[ "res://.import/Constant Rocket Engines 1.ogg-c45178f1f0abe5ad1088996aa19af228.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

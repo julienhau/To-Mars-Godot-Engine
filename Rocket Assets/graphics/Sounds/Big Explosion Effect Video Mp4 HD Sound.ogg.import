@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Big Explosion Effect Video Mp4 HD Sound.ogg-98818799d68921f69fd1c53f4536d7bb.oggstr"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Big Explosion Effect Video Mp4 HD Sound.ogg"
+dest_files=[ "res://.import/Big Explosion Effect Video Mp4 HD Sound.ogg-98818799d68921f69fd1c53f4536d7bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8 Bit Space Groove! Chill Pretty Game Music by HeatleyBros.ogg-ce1bcd7a97c6fa24f9e75c9bc0a0251d.oggstr"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/8 Bit Space Groove! Chill Pretty Game Music by HeatleyBros.ogg"
+dest_files=[ "res://.import/8 Bit Space Groove! Chill Pretty Game Music by HeatleyBros.ogg-ce1bcd7a97c6fa24f9e75c9bc0a0251d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

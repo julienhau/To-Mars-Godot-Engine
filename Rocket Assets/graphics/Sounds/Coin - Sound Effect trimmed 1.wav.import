@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Coin - Sound Effect trimmed 1.wav-405ffed6333fe01b736552adef03810c.sample"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Coin - Sound Effect trimmed 1.wav"
+dest_files=[ "res://.import/Coin - Sound Effect trimmed 1.wav-405ffed6333fe01b736552adef03810c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

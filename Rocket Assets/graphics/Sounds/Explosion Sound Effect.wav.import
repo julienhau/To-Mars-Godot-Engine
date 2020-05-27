@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Explosion Sound Effect.wav-a7bda5a4ca6bca31758796d6fc9f7bd3.sample"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Explosion Sound Effect.wav"
+dest_files=[ "res://.import/Explosion Sound Effect.wav-a7bda5a4ca6bca31758796d6fc9f7bd3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

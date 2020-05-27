@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8 Bit Beginning! Slow Chill Game Music by HeatleyBros.ogg-83c39ebc06a21b517fd19f67c424ab9d.oggstr"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/8 Bit Beginning! Slow Chill Game Music by HeatleyBros.ogg"
+dest_files=[ "res://.import/8 Bit Beginning! Slow Chill Game Music by HeatleyBros.ogg-83c39ebc06a21b517fd19f67c424ab9d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

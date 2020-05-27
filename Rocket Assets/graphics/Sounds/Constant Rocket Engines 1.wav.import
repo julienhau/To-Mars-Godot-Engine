@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Constant Rocket Engines 1.wav-e5145cd032f1bf6f2dc6bc6252be3394.sample"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Constant Rocket Engines 1.wav"
+dest_files=[ "res://.import/Constant Rocket Engines 1.wav-e5145cd032f1bf6f2dc6bc6252be3394.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Option Menu! Chill Calm Game Music by HeatleyBros.ogg-07835ade10b9f91bd2834221d71f9e12.oggstr"
+
+[deps]
+
+source_file="res://rocket assets/graphics/Sounds/Option Menu! Chill Calm Game Music by HeatleyBros.ogg"
+dest_files=[ "res://.import/Option Menu! Chill Calm Game Music by HeatleyBros.ogg-07835ade10b9f91bd2834221d71f9e12.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
