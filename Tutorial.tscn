@@ -1,0 +1,262 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://rocket assets/graphics/animeace.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://rocket assets/graphics/cartoon-phone-png-4.png" type="Texture" id=3]
+[ext_resource path="res://rocket assets/graphics/arrow-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://rocket assets/graphics/maxresdefault-removebg-preview.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 166, 187 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 332, 0, 166, 187 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Phone"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Phone:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0, 0.0, -20.0, 0.0 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.756863, 0.0784314, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "End"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 20.0, 0.0, -20.0, 0.0 ]
+}
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.75809
+margin_bottom = 1.75806
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RocketLabel" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 424.922
+margin_top = 1192.32
+margin_right = 704.922
+margin_bottom = 1237.32
+custom_fonts/font = SubResource( 1 )
+text = "This is your rocket
+You will use this to fly"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FingerLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 434.844
+margin_top = 1045.4
+margin_right = 685.844
+margin_bottom = 1130.4
+custom_fonts/font = SubResource( 1 )
+text = "Tap and hold to start the engine
+Release to stop the engine "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+modulate = Color( 0.0745098, 0.0392157, 0.0392157, 1 )
+position = Vector2( 490.08, 968.358 )
+scale = Vector2( 1.48531, 1.39042 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="PhoneLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 482.158
+margin_top = 521.0
+margin_right = 691.158
+margin_bottom = 584.0
+custom_fonts/font = SubResource( 1 )
+text = "Tilt your phone left and right to steer the rocket"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Phone" type="Sprite" parent="."]
+visible = false
+position = Vector2( 341.722, 551.38 )
+scale = Vector2( 0.268606, 0.266114 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Phone"]
+position = Vector2( 348.334, -508.517 )
+rotation = 1.5708
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="Phone"]
+position = Vector2( -318.793, -497.272 )
+rotation = -1.5708
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="PhoneAnim" type="AnimationPlayer" parent="."]
+anims/Phone = SubResource( 5 )
+
+[node name="EndLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 478.948
+margin_top = 738.631
+margin_right = 697.948
+margin_bottom = 779.631
+custom_fonts/font = SubResource( 1 )
+text = "You can also tilt like this"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 434.167
+margin_top = 149.126
+margin_right = 653.167
+margin_bottom = 234.126
+custom_fonts/font = SubResource( 1 )
+text = "These show you how damaged your rocket is, and how much fuel is left"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 70.6802
+margin_top = 994.591
+margin_right = 289.68
+margin_bottom = 1079.59
+custom_fonts/font = SubResource( 1 )
+text = "This bar shows you your progress on your journey"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinalLabel" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 101.0
+margin_top = 114.0
+margin_right = 343.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 1 )
+text = "The goal of the game is to reach Mars!
+Upgrade your rocket to travel further and further"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 272.173
+margin_top = 762.172
+margin_right = 408.173
+margin_bottom = 780.172
+rect_rotation = 8.87326
+rect_pivot_offset = Vector2( 67, 0 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 383.412, 41.4961, 258.56, 37.2565 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect"]
+margin_left = 57.4192
+margin_top = 6.78149
+margin_right = 77.4192
+margin_bottom = 12.7815
+color = Color( 0.313726, 0.278431, 0.278431, 1 )
+
+[node name="Sprite" type="Sprite" parent="NinePatchRect"]
+position = Vector2( 158.401, -9.28247 )
+rotation = 1.5708
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="NinePatchRect"]
+position = Vector2( -21.4343, -9.43115 )
+rotation = -1.5708
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 117.0
+margin_top = 272.0
+margin_right = 306.0
+margin_bottom = 337.0
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.968627, 0.968627, 0.968627, 1 )
+disabled = true
+text = "Let's go!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndAnim" type="AnimationPlayer" parent="."]
+anims/End = SubResource( 8 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

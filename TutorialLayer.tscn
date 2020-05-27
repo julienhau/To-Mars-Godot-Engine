@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TutorialLayer.gd" type="Script" id=2]
+
+[node name="TutorialLayer" type="CanvasLayer"]
+layer = 4
+script = ExtResource( 2 )
+
+[node name="Tutorial" parent="." instance=ExtResource( 1 )]
+[connection signal="boo" from="Tutorial" to="." method="_on_Tutorial_boo"]

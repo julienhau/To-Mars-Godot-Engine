@@ -1,0 +1,263 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://rocket assets/graphics/rocket/rocketnose.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://rocket assets/graphics/rocket/explosion.png" type="Texture" id=3]
+[ext_resource path="res://rocket assets/graphics/rocket/rockethull.png" type="Texture" id=4]
+[ext_resource path="res://rocket assets/graphics/rocket/rocketengine.png" type="Texture" id=5]
+[ext_resource path="res://rocket assets/graphics/rocket/rocket-fire.png" type="Texture" id=6]
+[ext_resource path="res://rocket assets/graphics/Sounds/Big Explosion Effect Video Mp4 HD Sound.ogg" type="AudioStream" id=7]
+[ext_resource path="res://rocket assets/graphics/obstacles/boost.png" type="Texture" id=8]
+[ext_resource path="res://rocket assets/graphics/Sounds/Constant Rocket Engines 1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://PlayerSprite.gd" type="Script" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 11.936
+height = 49.765
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 110, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 110, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 110, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 220, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 220, 128, 110 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 220, 128, 110 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=12]
+resource_name = "New Anim"
+length = 0.1
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0333333, 0.0666666, 0.0999999 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1700 ), Vector2( 0, 1730 ), Vector2( 0, 1670 ), Vector2( 0, 1700 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 353.147, 1072.44 )
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_right = 2048
+limit_bottom = 1280
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 11 )
+animation = "explosion"
+
+[node name="Fuel" type="Timer" parent="."]
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+scale = Vector2( 0.03, 0.03 )
+script = ExtResource( 10 )
+
+[node name="Nose" type="Sprite" parent="PlayerSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="Hull" type="Sprite" parent="PlayerSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite"]
+visible = false
+position = Vector2( 0, 1700 )
+scale = Vector2( 4, 4.5 )
+
+[node name="basic" type="Sprite" parent="PlayerSprite/Sprite"]
+texture = ExtResource( 6 )
+
+[node name="double" type="Sprite" parent="PlayerSprite/Sprite"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite/double"]
+position = Vector2( 139.656, -50.5063 )
+scale = Vector2( 0.8, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite/double"]
+position = Vector2( -138.693, -51.0154 )
+scale = Vector2( 0.8, 0.7 )
+texture = ExtResource( 6 )
+
+[node name="big" type="Sprite" parent="PlayerSprite/Sprite"]
+visible = false
+position = Vector2( 0.502865, 37.1719 )
+scale = Vector2( 1.33216, 1.43991 )
+texture = ExtResource( 6 )
+
+[node name="doublebig" type="Sprite" parent="PlayerSprite/Sprite"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite/doublebig"]
+position = Vector2( 2.69629, 27.5609 )
+scale = Vector2( 1.0793, 1.30483 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite/doublebig"]
+position = Vector2( 140.198, -11.9835 )
+scale = Vector2( 0.793827, 0.600576 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3" type="Sprite" parent="PlayerSprite/Sprite/doublebig"]
+position = Vector2( -138.85, -17.9736 )
+scale = Vector2( 0.785898, 0.590067 )
+texture = ExtResource( 6 )
+
+[node name="final" type="Sprite" parent="PlayerSprite/Sprite"]
+visible = false
+position = Vector2( -1.74219, 29.4238 )
+scale = Vector2( 0.989752, 1.2581 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite/final"]
+position = Vector2( -124.664, -14.1223 )
+scale = Vector2( 0.969861, 0.709483 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3" type="Sprite" parent="PlayerSprite/Sprite/final"]
+position = Vector2( 125.586, -12.865 )
+scale = Vector2( 0.993044, 0.739025 )
+texture = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite/final"]
+position = Vector2( 3.01831, -4.19531 )
+scale = Vector2( 1.01776, 0.972228 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite"]
+visible = false
+position = Vector2( -5.12695, 1702.88 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+offset = Vector2( 200, -20 )
+
+[node name="basic" type="Sprite" parent="PlayerSprite/Sprite2"]
+position = Vector2( 187.887, -19.2515 )
+texture = ExtResource( 8 )
+
+[node name="double" type="Sprite" parent="PlayerSprite/Sprite2"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite2/double"]
+position = Vector2( 95.8271, 247.48 )
+scale = Vector2( 0.85673, 0.910853 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite2/double"]
+position = Vector2( 75.7729, -295.77 )
+scale = Vector2( 0.828074, 0.949059 )
+texture = ExtResource( 8 )
+
+[node name="big" type="Sprite" parent="PlayerSprite/Sprite2"]
+visible = false
+position = Vector2( 164.499, -30.2505 )
+scale = Vector2( 1.01433, 1.30564 )
+texture = ExtResource( 8 )
+
+[node name="doublebig" type="Sprite" parent="PlayerSprite/Sprite2"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite2/doublebig"]
+position = Vector2( 229.352, -16.2615 )
+scale = Vector2( 1.09312, 1.17829 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite2/doublebig"]
+position = Vector2( 165.049, 242.069 )
+scale = Vector2( 0.863892, 1.02547 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="PlayerSprite/Sprite2/doublebig"]
+position = Vector2( 179.718, -293.419 )
+scale = Vector2( 0.892546, 0.97453 )
+texture = ExtResource( 8 )
+
+[node name="final" type="Sprite" parent="PlayerSprite/Sprite2"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="PlayerSprite/Sprite2/final"]
+position = Vector2( 220.063, -22.0068 )
+texture = ExtResource( 8 )
+
+[node name="Sprite2" type="Sprite" parent="PlayerSprite/Sprite2/final"]
+position = Vector2( 234.736, 234.733 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="PlayerSprite/Sprite2/final"]
+position = Vector2( 249.402, -286.084 )
+texture = ExtResource( 8 )
+
+[node name="Engine" type="Sprite" parent="PlayerSprite"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
+"anims/New Anim" = SubResource( 12 )
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -7.0
+[connection signal="timeout" from="Fuel" to="." method="_on_Fuel_timeout"]

@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://rocket assets/graphics/Sounds/8 Bit Space Groove! Chill Pretty Game Music by HeatleyBros.ogg" type="AudioStream" id=2]
+[ext_resource path="res://titlescreen (2).jpg" type="Texture" id=3]
+[ext_resource path="res://rocket assets/graphics/animeace.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 360, 640 )
+texture = ExtResource( 3 )
+
+[node name="NewGameButton" type="Button" parent="."]
+margin_left = 213.0
+margin_top = 655.0
+margin_right = 509.0
+margin_bottom = 740.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 206.0
+margin_top = 875.0
+margin_right = 513.0
+margin_bottom = 959.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadButton" type="Button" parent="."]
+margin_left = 214.0
+margin_top = 762.0
+margin_right = 502.0
+margin_bottom = 850.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutButton" type="Button" parent="."]
+margin_left = 205.0
+margin_top = 982.0
+margin_right = 513.0
+margin_bottom = 1067.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="S" type="Button" parent="."]
+margin_left = 572.0
+margin_top = 121.0
+margin_right = 664.0
+margin_bottom = 227.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="R" type="Button" parent="."]
+margin_left = 489.522
+margin_top = 103.0
+margin_right = 558.522
+margin_bottom = 217.0
+flat = true
+
+[node name="A" type="Button" parent="."]
+margin_left = 402.108
+margin_top = 114.136
+margin_right = 472.108
+margin_bottom = 202.136
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="M" type="Button" parent="."]
+margin_left = 291.0
+margin_top = 98.0
+margin_right = 383.0
+margin_bottom = 203.0
+flat = true
+
+[node name="O" type="Button" parent="."]
+margin_left = 149.324
+margin_top = 118.108
+margin_right = 224.324
+margin_bottom = 217.108
+flat = true
+
+[node name="T" type="Button" parent="."]
+margin_left = 35.089
+margin_top = 135.061
+margin_right = 103.089
+margin_bottom = 255.061
+rect_rotation = -17.0
+flat = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.364706, 0.364706, 0.364706, 1 )
+margin_left = 17.0
+margin_top = 1208.0
+margin_right = 704.0
+margin_bottom = 1271.0
+custom_fonts/font = SubResource( 1 )
+text = "created by
+Julien hau fai tseung
+timothy lam yan yu                                                     version 1.0.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_LoadButton_pressed"]
+[connection signal="pressed" from="AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="S" to="." method="_on_S_pressed"]
+[connection signal="pressed" from="R" to="." method="_on_R_pressed"]
+[connection signal="pressed" from="A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="M" to="." method="_on_M_pressed"]
+[connection signal="pressed" from="O" to="." method="_on_O_pressed"]
+[connection signal="pressed" from="T" to="." method="_on_T_pressed"]

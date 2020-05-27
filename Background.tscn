@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://rocket assets/graphics/background/foreground_mountains.png" type="Texture" id=1]
+[ext_resource path="res://rocket assets/graphics/background/space.png" type="Texture" id=2]
+[ext_resource path="res://rocket assets/graphics/background/mid_ground_cloud_2.png" type="Texture" id=3]
+[ext_resource path="res://rocket assets/graphics/background/mid_ground_cloud_1.png" type="Texture" id=4]
+[ext_resource path="res://rocket assets/graphics/background/small_cloud.png" type="Texture" id=5]
+[ext_resource path="res://rocket assets/graphics/background/midground_mountains.png" type="Texture" id=6]
+[ext_resource path="res://rocket assets/graphics/background/farground_mountains.png" type="Texture" id=7]
+[ext_resource path="res://rocket assets/graphics/background/gradient.png" type="Texture" id=8]
+[ext_resource path="res://rocket assets/graphics/obstacles/huge asteroid.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1022.38, 10 )
+
+[node name="Background" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -8945.38 ]
+}
+
+[node name="Mountains" type="StaticBody2D" parent="."]
+collision_mask = 4
+
+[node name="Sprite" type="Sprite" parent="Mountains"]
+position = Vector2( 1019.08, 1080.67 )
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="Mountains"]
+position = Vector2( 1019.08, 1172.43 )
+texture = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="Mountains"]
+margin_top = 1172.43
+margin_right = 2048.0
+margin_bottom = 1281.43
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mountains"]
+position = Vector2( 1019.08, 1261.79 )
+shape = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Space" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2050, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( -8.92114, -8889.55 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( 0, -12259.2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( 0, -15651.2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( 0, -19029.2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( 0, -22382.8 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/Space"]
+position = Vector2( 0, -25764.6 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Cloud 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Cloud 1"]
+position = Vector2( 1019.08, 189.645 )
+texture = ExtResource( 4 )
+
+[node name="Cloud 2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Cloud 2"]
+position = Vector2( 1019.08, 426.645 )
+texture = ExtResource( 3 )
+
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2( -59.0576, -88.5854 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 352.993, -3074.23 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 3214.91, -3097.69 )
+texture = ExtResource( 5 )
+
+[node name="Sprite5" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 2837.04, -3021.55 )
+texture = ExtResource( 5 )
+
+[node name="Sprite11" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 3852.64, -3112.49 )
+texture = ExtResource( 5 )
+
+[node name="Sprite12" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 3579.79, -2960.91 )
+texture = ExtResource( 5 )
+
+[node name="Sprite6" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 2475.97, -3132.88 )
+texture = ExtResource( 5 )
+
+[node name="Sprite7" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 2429.05, -2933.48 )
+texture = ExtResource( 5 )
+
+[node name="Sprite8" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 2039.55, -2864.58 )
+texture = ExtResource( 5 )
+
+[node name="Sprite9" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 1671.49, -3088.21 )
+texture = ExtResource( 5 )
+
+[node name="Sprite10" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 1500.08, -2845.78 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 1028.55, -3050.94 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="Clouds"]
+modulate = Color( 1, 1, 1, 0.682353 )
+position = Vector2( 650.024, -2937.14 )
+texture = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1370.15, -5353.08 )
+texture = ExtResource( 8 )
+
+[node name="Mars" type="Sprite" parent="."]
+modulate = Color( 0.909804, 0.454902, 0.12549, 1 )
+position = Vector2( 1377.99, -27042.2 )
+rotation = 3.14159
+scale = Vector2( 3.91414, 2.22353 )
+texture = ExtResource( 9 )

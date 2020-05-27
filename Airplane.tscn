@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Airplane.gd" type="Script" id=1]
+[ext_resource path="res://rocket assets/graphics/obstacles/airplane (2).png" type="Texture" id=2]
+[ext_resource path="res://rocket assets/graphics/Sounds/Explosion Sound Effect.wav" type="AudioStream" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.99951
+height = 86.9767
+
+[node name="Airplane" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 2
+gravity_scale = 0.0
+contacts_reported = 1000
+contact_monitor = true
+linear_damp = 0.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.307358, -17.5194 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="BoomSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_Plane_body_entered"]

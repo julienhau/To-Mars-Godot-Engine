@@ -1,0 +1,69 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.gd" type="Script" id=6]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ScoreMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Diamond.tscn" type="PackedScene" id=9]
+[ext_resource path="res://rocket assets/graphics/Sounds/8 Bit Beginning! Slow Chill Game Music by HeatleyBros.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Bird.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Helicopter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Airplane.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Asteroid.tscn" type="PackedScene" id=14]
+[ext_resource path="res://BigAsteroid.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Boost.tscn" type="PackedScene" id=16]
+[ext_resource path="res://HugeAsteroid.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Satellite.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Upgrade.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Options.tscn" type="PackedScene" id=20]
+[ext_resource path="res://TutorialLayer.tscn" type="PackedScene" id=21]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+Tutorial = ExtResource( 21 )
+Obstacle = ExtResource( 4 )
+Bird = ExtResource( 11 )
+Airplane = ExtResource( 13 )
+Helicopter = ExtResource( 12 )
+Satellite = ExtResource( 18 )
+HugeAsteroid = ExtResource( 17 )
+Asteroid = ExtResource( 14 )
+BigAsteroid = ExtResource( 15 )
+Coin = ExtResource( 7 )
+Diamond = ExtResource( 9 )
+Boost = ExtResource( 16 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1030, 1215 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+show_behind_parent = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_bottom = -0.00012207
+script = ExtResource( 6 )
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Upgrade" parent="." instance=ExtResource( 19 )]
+margin_left = -1584.65
+margin_top = 4282.77
+margin_right = -1584.65
+margin_bottom = 4282.77
+
+[node name="Options" parent="." instance=ExtResource( 20 )]
+margin_left = -1650.43
+margin_top = 6231.59
+margin_right = -1650.43
+margin_bottom = 6231.59
+
+[node name="ScoreMenu" parent="." instance=ExtResource( 8 )]
+[connection signal="start" from="Player" to="CanvasLayer/HUD" method="_on_Player_start"]

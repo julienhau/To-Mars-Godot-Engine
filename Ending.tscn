@@ -1,0 +1,177 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://rocket assets/graphics/rocket/force nose.png" type="Texture" id=1]
+[ext_resource path="res://rocket assets/graphics/rocket/final engine.png" type="Texture" id=2]
+[ext_resource path="res://rocket assets/graphics/rocket/gold hull.png" type="Texture" id=3]
+[ext_resource path="res://rocket assets/graphics/rocket/rocket-fire.png" type="Texture" id=4]
+[ext_resource path="res://Ending.gd" type="Script" id=5]
+[ext_resource path="res://rocket assets/graphics/animeace.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://rocket assets/graphics/background/martian background.png" type="Texture" id=7]
+[ext_resource path="res://rocket assets/graphics/Sounds/8 Bit Space Groove! Chill Pretty Game Music by HeatleyBros.ogg" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 356.861, -63.67 ), Vector2( 356.861, 1200 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 6 )
+
+[node name="Ending" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 688, 914.65 )
+scale = Vector2( 1.31961, 2.46635 )
+texture = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 720.0
+margin_bottom = 873.0
+color = Color( 1, 0.894118, 0.792157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 356.861, -63.67 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/Sprite"]
+position = Vector2( -0.294434, 50.1793 )
+scale = Vector2( 0.125533, 0.11121 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="Player/Sprite"]
+position = Vector2( -15.5996, 48.5896 )
+scale = Vector2( 0.117052, 0.0789964 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="Player/Sprite"]
+position = Vector2( 14.8188, 49.3813 )
+scale = Vector2( 0.113495, 0.0868305 )
+texture = ExtResource( 4 )
+
+[node name="Nose" type="Sprite" parent="Player"]
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 1 )
+
+[node name="Hull" type="Sprite" parent="Player"]
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 3 )
+
+[node name="Engine" type="Sprite" parent="Player"]
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 94.4463
+margin_top = 235.064
+margin_right = 600.446
+margin_bottom = 472.064
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations!
+You reached Mars!
+
+Thanks for playing
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_left = 256.091
+margin_top = 1061.36
+margin_right = 477.091
+margin_bottom = 1129.36
+color = Color( 0.976471, 0.560784, 0.282353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 257.862
+margin_top = 1070.58
+margin_right = 473.862
+margin_bottom = 1123.58
+custom_fonts/font = SubResource( 3 )
+disabled = true
+text = "continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 113.276
+margin_top = 570.842
+margin_right = 611.276
+margin_bottom = 863.842
+custom_fonts/font = SubResource( 4 )
+text = "New game mode unlocked!
+
+Return to the title screen and spell 'SMART' with the letters of the title to access endless mode!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line" type="Line2D" parent="."]
+visible = false
+points = PoolVector2Array( 71.6754, 509.835, 641.879, 509.746 )
+default_color = Color( 0, 0, 0, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
